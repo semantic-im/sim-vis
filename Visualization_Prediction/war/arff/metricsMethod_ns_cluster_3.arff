@@ -1,0 +1,38 @@
+@relation 'atomicMetrics_V1-weka.filters.unsupervised.attribute.StringToWordVector-R5-Pns_-W1000-prune-rate-1.0-N0-L-stemmerweka.core.stemmers.NullStemmer-M1-tokenizerweka.core.tokenizers.WordTokenizer -delimiters \"[,] \"'
+
+@attribute QueryTimestamp date 'yyyy-MM-dd HH:mm:ss'
+@attribute QueryContent string
+@attribute QueryNamespaceNb numeric
+@attribute QueryNamespaceKeys string
+@attribute QueryVariablesNb numeric
+@attribute QueryDataSetSourcesNb numeric
+@attribute QueryResultOrderingNb numeric
+@attribute QueryResultLimitNb numeric
+@attribute QueryResultOffsetNb numeric
+@attribute QuerySizeInTriples numeric
+@attribute WorkflowDurationFromPlatform numeric
+@attribute QueryTotalResponseTimeFromClient numeric
+@attribute QueryCompletionStatus {SuccessfulQuery,FailedQuery}
+@attribute DeciderTotalExecutionTime numeric
+@attribute TransformerTotalExecutionTime numeric
+@attribute IdentifierTotalExecutionTime numeric
+@attribute SelecterTotalExecutionTime numeric
+@attribute ReasonerTotalExecutionTime numeric
+@attribute WorkflowPluginNb numeric
+@attribute DeciderThreadsStartedNB numeric
+@attribute WorkflowDuration numeric
+@attribute ns_http://dbpedia.org/ numeric
+@attribute ns_http://dbpedia.org/class/yago/ numeric
+@attribute ns_http://dbpedia.org/property/ numeric
+@attribute ns_http://dbpedia.org/resource/ numeric
+@attribute ns_http://dbpedia.org/resource/category: numeric
+@attribute ns_http://purl.org/dc/elements/1.1/ numeric
+@attribute ns_http://www.w3.org/1999/02/22-rdf-syntax-ns# numeric
+@attribute ns_http://www.w3.org/2000/01/rdf-schema# numeric
+@attribute ns_http://www.w3.org/2004/02/skos/core# numeric
+@attribute ns_http://www.w3.org/people/berners-lee/card# numeric
+@attribute ns_http://xmlns.com/foaf/0.1/ numeric
+
+@data
+{0 '2011-01-19 10:21:34',1 'PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dbres: <http://dbpedia.org/resource/> PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX dbpedia: <http://dbpedia.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT ?name WHERE {   ?monument skos:broader <http://dbpedia.org/resource/Category:Visitor_attractions_in_Milan> .   ?monument rdfs:label ?name . } ',2 5,3 '[dbres, rdfs, dbpedia, rdf, skos]',4 2,9 2,10 -1,11 965782,12 FailedQuery,13 -1,14 -1,15 -1,16 -1,17 -1,18 -1,19 -1,20 -1,21 1,24 1,27 1,28 1,29 1}
+{0 '2011-01-20 10:02:42',1 'PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dbres: <http://dbpedia.org/resource/> PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX dbpedia: <http://dbpedia.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  SELECT ?name WHERE {   ?monument skos:broader <http://dbpedia.org/resource/Category:Visitor_attractions_in_Milan> .   ?monument rdfs:label ?name . }',2 5,3 '[dbres, rdfs, dbpedia, rdf, skos]',4 2,9 2,10 -1,11 1284625,12 FailedQuery,13 -1,14 -1,15 -1,16 -1,17 -1,18 -1,19 -1,20 -1,21 1,24 1,27 1,28 1,29 1}

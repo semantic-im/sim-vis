@@ -1,0 +1,28 @@
+@relation QueryInstancesRelation
+
+@attribute QueryTimestamp date 'yyyy-MM-dd HH:mm:ss'
+@attribute QueryContent string
+@attribute QueryNamespaceNb numeric
+@attribute QueryNamespaceKeys string
+@attribute QueryNamespaceValues string
+@attribute QueryVariablesNb numeric
+@attribute QueryDataSetSourcesNb numeric
+@attribute QueryResultOrderingNb numeric
+@attribute QueryResultLimitNb numeric
+@attribute QueryResultOffsetNb numeric
+@attribute QuerySizeInTriples numeric
+@attribute class numeric
+@attribute ns_http://dbpedia.org/ numeric
+@attribute ns_http://dbpedia.org/class/yago/ numeric
+@attribute ns_http://dbpedia.org/property/ numeric
+@attribute ns_http://dbpedia.org/resource/ numeric
+@attribute ns_http://dbpedia.org/resource/category: numeric
+@attribute ns_http://purl.org/dc/elements/1.1/ numeric
+@attribute ns_http://www.w3.org/1999/02/22-rdf-syntax-ns# numeric
+@attribute ns_http://www.w3.org/2000/01/rdf-schema# numeric
+@attribute ns_http://www.w3.org/2004/02/skos/core# numeric
+@attribute ns_http://www.w3.org/people/berners-lee/card# numeric
+@attribute ns_http://xmlns.com/foaf/0.1/ numeric
+
+@data
+'2011-01-31 16:57:22','PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT  ?weblog ?sha1 ?name WHERE { ?x foaf:knows ?y . ?y foaf:name  \"Ionel Chopin\". ?x foaf:name ?name . ?x foaf:weblog ?weblog. ?x foaf:mbox_sha1sum ?sha1 } ',1,[foaf],[http://xmlns.com/foaf/0.1/],5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1

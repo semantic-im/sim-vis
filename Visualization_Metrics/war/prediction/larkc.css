@@ -1,0 +1,146 @@
+html {
+	overflow-y: scroll;
+}
+
+body {
+	margin: 0px 0px 0px 0px;
+	font-family: Arial;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	min-height:400px;
+}
+
+
+#header {
+	/*bg -  162px 	bg_1 - 143 px  	bg_2 - 105 px*/
+	background-image: url('images/bg_2.png'); 
+	background-repeat:repeat-x;
+	height:105px;
+	margin-left: 0px;
+	margin-right:0px;
+	text-align:center;
+}
+.quicklinks {
+	font-family: Verdana,sans-serif;
+	font-weight: normal;
+	font-size:12px;
+	color:#FFFFFF;
+	position:relative;
+	top: 10px;
+	right:30px;
+	text-decoration:none;
+}
+
+.quicklinks  a{
+	font-family: Verdana,sans-serif;
+	font-weight: normal;
+	font-size:12px;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:normal
+}
+.quicklinks  a:hover {
+	font-weight:bold;
+	color:#FFFFFF;
+}
+
+#menu {
+	float:left;
+	width: 180px;
+	padding:10px;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right : 5px;
+	border-style:solid;
+	border-width:0px;
+	display:block;
+}
+.menu_text a {
+	text-decoration:none;
+	font-size:13px;
+	color:#000000;
+	font-family: Verdana,sans-serif;
+	font-weight:bold;
+}
+
+.menu_text2 a {
+	text-decoration:none;
+	font-size:13px;
+	color:#000000;
+	font-weight:normal;
+	font-family: Verdana,sans-serif;
+	padding-left:15px;
+}
+.menu_text a:hover {
+	color:#74A0C2;
+	padding-left: 10px;
+}
+
+.menu_text2 a:hover {
+	color:#74A0C2;
+	padding-left: 25px;
+}
+
+#content {
+	margin:10px 10px 10px 220px;
+	padding: 10px;
+	border-style:solid;
+	border-width:0px;
+	height: 400px;
+	font-size: 14px;
+	font-family: Verdana,sans-serif;
+	min-height: 600px;
+}
+#bottom-line1 {
+	height:20px;
+	display:block;
+	background-color:#7A1A34;
+	color:#FFFFFF;
+	text-align:center;
+	font-family:Verdana,sans-serif;
+	font-weight:bold;
+	font-size: 14px;
+	border-style:solid;
+	border-width:0px;
+	display:block;
+}
+#bottom-line2 {
+	height:15px;
+	display:block;
+	background-color:#143A56;
+	border-style:solid;
+	border-width:0px;
+}
+#footer {
+	text-align:center;
+	font-size:10px;
+	color:#74A0C2;
+}
+h1 {	
+	text-align:left;
+	font-family: Verdana,sans-serif;
+	font-weight:bold;
+	font-size:28px;
+	text-decoration: none;
+	color: 7A1A34;
+}
+a{
+	text-decoration: none;
+	color:#000000;
+	font-weight: normal;
+}
+a:hover {
+	color:#74A0C2;
+}
+.contact_text{
+	text-align: left;
+	font-family: Verdana,sans-serif;
+	font-size:13px;
+	padding-left:50px;
+	padding-right:50px;
+		
+}
+.query_right{
+	padding-left:600px;
+	width:200px;
+}

@@ -1,0 +1,1 @@
+java -cp .;..\lib\jrobin-1.5.9.1.jar;..\lib\org.restlet.jar;..\lib\rrd4j-2.0.5.jar  Rrd4jJSONServer "c:\Documents and Settings\intadmin\Desktop\RRD\!rrds"

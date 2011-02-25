@@ -1,0 +1,24 @@
+@relation 'QueryInstancesRelation-weka.filters.unsupervised.attribute.Remove-R1,2,4,5'
+
+@attribute QueryNamespaceNb numeric
+@attribute QueryVariablesNb numeric
+@attribute QueryDataSetSourcesNb numeric
+@attribute QueryResultOrderingNb numeric
+@attribute QueryResultLimitNb numeric
+@attribute QueryResultOffsetNb numeric
+@attribute QuerySizeInTriples numeric
+@attribute class numeric
+@attribute ns_http://dbpedia.org/ numeric
+@attribute ns_http://dbpedia.org/class/yago/ numeric
+@attribute ns_http://dbpedia.org/property/ numeric
+@attribute ns_http://dbpedia.org/resource/ numeric
+@attribute ns_http://dbpedia.org/resource/category: numeric
+@attribute ns_http://purl.org/dc/elements/1.1/ numeric
+@attribute ns_http://www.w3.org/1999/02/22-rdf-syntax-ns# numeric
+@attribute ns_http://www.w3.org/2000/01/rdf-schema# numeric
+@attribute ns_http://www.w3.org/2004/02/skos/core# numeric
+@attribute ns_http://www.w3.org/people/berners-lee/card# numeric
+@attribute ns_http://xmlns.com/foaf/0.1/ numeric
+
+@data
+1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1

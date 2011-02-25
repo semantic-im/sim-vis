@@ -1,0 +1,10 @@
+@relation 'test'
+@attribute MYCT real
+@attribute MMIN real
+@attribute MMAX real
+@attribute CACH real
+@attribute CHMIN real
+@attribute CHMAX real
+@attribute class real
+@data
+1,2,3,4,5,6,7

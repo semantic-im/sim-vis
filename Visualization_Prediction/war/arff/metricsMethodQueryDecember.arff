@@ -1,0 +1,60 @@
+ % 1. Title: Atomic Metrics for LarKC - v1
+   % 2. Sources:
+   %      (a) Creator: Raluca Brehar
+   %      (b) Date: December, 2010
+   % 
+@RELATION atomicMetrics_V1_december2
+
+@ATTRIBUTE	QueryContent					STRING
+@ATTRIBUTE 	QueryNamespaceNb  				NUMERIC
+@ATTRIBUTE 	QueryNamespaces   				STRING
+@ATTRIBUTE 	QueryVariablesNb 				NUMERIC
+@ATTRIBUTE 	QueryDataSetSourcesNb  			NUMERIC
+@ATTRIBUTE	QueryResultOrderingNb 			NUMERIC
+@ATTRIBUTE 	QueryResultLimitNb 				NUMERIC
+@ATTRIBUTE	QueryResultOffsetNb 			NUMERIC
+@ATTRIBUTE 	QuerySizeInTriples  			NUMERIC
+@ATTRIBUTE 	WorkflowDurationFromPlatform  	NUMERIC
+@ATTRIBUTE	QueryTotalResponseTimeFromClient	NUMERIC
+@ATTRIBUTE 	DeciderTotalExecutionTime		NUMERIC
+@ATTRIBUTE 	TransformerTotalExecutionTime	NUMERIC
+@ATTRIBUTE 	IdentifierTotalExecutionTime	NUMERIC
+@ATTRIBUTE 	SelecterTotalExecutionTime		NUMERIC
+@ATTRIBUTE 	ReasonerTotalExecutionTime		NUMERIC
+@ATTRIBUTE 	WorkflowPluginNb				NUMERIC
+@ATTRIBUTE	DeciderThreadsStartedNB			NUMERIC
+@ATTRIBUTE	WorkflowDuration				NUMERIC
+@ATTRIBUTE	QueryCompletionStatus	{SuccessfulQuery, FailedQuery}
+
+@DATA
+
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/>   SELECT ?name1   WHERE {   ?person1 foaf:knows ?person2 .   ?person1 foaf:name  ?name1 .   ?person2 foaf:name  "Raluca Brehar" .       }  ', 1, '[foaf]', 3, 0, 0, 0, 0, 3, 5265, 5391, 5265, 5265, 5265, 5250, 5250, 5, 7, 5265, SuccessfulQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT  ?weblog ?sha1 ?name WHERE { ?x foaf:knows ?y . ?y foaf:name  "Morten Frederiksen". ?x foaf:name ?name . ?x foaf:weblog ?weblog. ?x foaf:mbox_sha1sum ?sha1 } LIMIT 10 ', 1, '[foaf]', 5, 0, 0, 10, 0, 5, 36750, 36782, 36750, 36750, 36750, 36750, 36750, 5, 2, 36750, SuccessfulQuery
+'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?title ?date WHERE { ?x dc:title ?title. ?x dc:created ?date. ?x foaf:maker ?me. ?me foaf:name "Leigh Dodds". }LIMIT 10', 2, '[dc, foaf]', 4, 0, 0, 10, 0, 4, 12375, 12406, 12375, 12375, 12375, 12375, 12375, 5, 0, 12375, SuccessfulQuery
+'PREFIX foaf:  <http://xmlns.com/foaf/0.1/> PREFIX card: <http://www.w3.org/People/Berners-Lee/card#> SELECT ?homepage WHERE {     card:i foaf:knows ?known .     ?known foaf:homepage ?homepage . }', 2, '[foaf, card]', 2, 0, 0, 0, 0, 2, 4281, 4281, 4281, 4281, 4281, 4281, 4281, 5, 0, 4281, SuccessfulQuery
+'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>         PREFIX type: <http://dbpedia.org/class/yago/> PREFIX prop: <http://dbpedia.org/property/> SELECT ?country_name ?population WHERE {     ?country a type:LandlockedCountries ;              rdfs:label ?country_name ;              prop:populationEstimate ?population .     FILTER (?population > 15000000) . } ', 3, '[rdfs, prop, type]', 3, 0, 0, 0, 0, 3, -1, 535547, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Museums_in_Europe } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, -1, 197875, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Museums_in_Romania } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 10125, 10234, 10125, 10125, 10125, 10109, 10109, 5, 7, 10125, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Museums_in_Europe } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 1781, 1797, 1781, 1781, 1781, 1781, 0, 5, 2, 1781, SuccessfulQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/>  SELECT ?mbox  WHERE  { ?x foaf:name "Charles Smith" .    ?x foaf:mbox ?mbox } ', 1, '[foaf]', 2, 0, 0, 0, 0, 2, -1, 110687, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri ?label WHERE {   ?uri foaf:name "Thierry Kennes" .   ?uri rdfs:label ?label   FILTER (?name = "The Beatles")   FILTER (lang(?label) = "en") }', 2, '[rdfs, foaf]', 2, 0, 0, 0, 0, 2, 1281, 1343, 1281, 1281, 1281, 1281, 1281, 13, 0, 1281, SuccessfulQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?uri ?name ?label WHERE {   ?uri foaf:name ?name .   ?uri rdfs:label ?label   FILTER (?name = "The Beatles")   FILTER (lang(?label) = "en") }', 2, '[rdfs, foaf]', 3, 0, 0, 0, 0, 2, -1, 1277437, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?graph ?name WHERE { ?alice foaf:name "Alice" . ?alice foaf:mbox ?mbox . GRAPH ?graph { ?x foaf:mbox ?mbox . ?x foaf:knows ?person . ?person foaf:name ?name . } }', 1, '[foaf]', 6, 0, 0, 0, 0, 5, -1, 135687, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?graph ?name WHERE { ?alice foaf:name "Alice" . ?alice foaf:mbox ?mbox . GRAPH ?graph { ?x foaf:mbox ?mbox . ?x foaf:knows ?person . ?person foaf:name ?name . } }', 1, '[foaf]', 6, 0, 0, 0, 0, 5, 19563, 19656, 19563, 19563, 19547, 19547, 19547, 5, 9, 19563, SuccessfulQuery
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?name1  ?name2 FROM <http://homepages.inf.ed.ac.uk/ewan/foaf.n3> FROM <http://www.ibiblio.org/hhalpin/foaf.rdf> WHERE {        ?person1 foaf:name ?name1 ;                foaf:knows [ foaf:name ?name2 ];       }', 1, '[foaf]', 4, 2, 0, 0, 0, 3, 69000, 69047, 69000, 69000, 69000, 69000, 69000, 5, 0, 69000, SuccessfulQuery
+'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?title ?date WHERE { ?x dc:title ?title. ?x dc:created ?date. ?x foaf:maker ?me. ?me foaf:name "Leigh Dodds". } ', 2, '[dc, foaf]', 4, 0, 0, 0, 0, 4, -1, 236047, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX space: <http://purl.org/net/schemas/space/> SELECT ?craft {   ?craft a space:Spacecraft } LIMIT 50 ', 1, '[space]', 1, 0, 0, 50, 0, 1, 5547, 5657, 5547, 5547, 5532, 5532, 5532, 9, 7, 5547, SuccessfulQuery
+'PREFIX dbprop: <http://dbpedia.org/property/>  PREFIX db: <http://dbpedia.org/resource/>  SELECT ?who ?work WHERE {    db:Tokyo_Mew_Mew dbprop:illustrator ?who .   ?work  dbprop:author ?who .  }  ', 2, '[db, dbprop]', 2, 0, 0, 0, 0, 2, 1984, 1984, 1984, 1984, 1984, 1984, 1984, 5, 0, 1984, SuccessfulQuery
+'PREFIX geospecies:  <http://rdf.geospecies.org/ont/geospecies#> PREFIX strigidae:   <http://lod.geospecies.org/families/a4vTG> PREFIX wisconsin:   <http://sws.geonames.org/5279468/> PREFIX dcterms:     <http://purl.org/dc/terms/>  SELECT DISTINCT ?family_name ?canonicalName ?speciesconcept ?geospeciespage  WHERE { ?x geospecies:hasFamilyName ?family_name;   geospecies:hasCanonicalName ?canonicalName;   dcterms:identifier ?speciesconcept;   geospecies:hasGeoSpeciesPage ?geospeciespage;   geospecies:inFamily strigidae:;   geospecies:isExpectedIn wisconsin:. } ORDER BY ?family_name ?canonicalName', 4, '[wisconsin, strigidae, geospecies, dcterms]', 5, 0, 2, 0, 0, 6, 6203, 6218, 6203, 6187, 6203, 6187, 6203, 5, 1, 6203, SuccessfulQuery
+'PREFIX geospecies:     <http://rdf.geospecies.org/ont/geospecies#> PREFIX uk:             <http://sws.geonames.org/2635167/> PREFIX bats:           <http://lod.geospecies.org/orders/TuTld> PREFIX dcterms:        <http://purl.org/dc/terms/>  SELECT DISTINCT ?family_name ?canonicalName ?speciesconcept ?geospeciespage  WHERE { ?x geospecies:hasFamilyName ?family_name;  geospecies:hasCanonicalName ?canonicalName;  dcterms:identifier ?speciesconcept;  geospecies:hasGeoSpeciesPage ?geospeciespage;  geospecies:inOrder bats:;  geospecies:isExpectedIn uk:. } ORDER BY ?family_name ?canonicalName ', 4, '[uk, bats, geospecies, dcterms]', 5, 0, 2, 0, 0, 6, -1, 606093, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX geospecies:     <http://rdf.geospecies.org/ont/geospecies#> PREFIX uk:             <http://sws.geonames.org/2635167/> PREFIX bats:           <http://lod.geospecies.org/orders/TuTld> PREFIX dcterms:        <http://purl.org/dc/terms/>  SELECT DISTINCT ?family_name ?canonicalName ?speciesconcept ?geospeciespage  WHERE { ?x geospecies:hasFamilyName ?family_name;  geospecies:hasCanonicalName ?canonicalName;  dcterms:identifier ?speciesconcept;  geospecies:hasGeoSpeciesPage ?geospeciespage;  geospecies:inOrder bats:;  geospecies:isExpectedIn uk:. } ORDER BY ?family_name ?canonicalName', 4, '[uk, bats, geospecies, dcterms]', 5, 0, 2, 0, 0, 6, 63000, 63094, 63000, 62984, 62984, 62984, 62984, 5, 9, 63000, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>  SELECT ?category WHERE { ?drug a dbpedia-owl:Drug ; skos:subject ?category . } ', 2, '[dbpedia-owl, skos]', 2, 0, 0, 0, 0, 2, -1, 428515, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX dbpprop: <http://dbpedia.org/property/> PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> SELECT ?mp WHERE { ?drug a dbpedia-owl:Drug . ?drug dbpprop:meltingPoint ?mp  } ', 2, '[dbpedia-owl, dbpprop]', 2, 0, 0, 0, 0, 2, 41906, 42016, 41906, 41890, 41890, 41890, 41890, 9, 7, 41906, SuccessfulQuery
+'PREFIX dbpprop: <http://dbpedia.org/property/> PREFIX dbpedia-owl: <http://dbpedia.org/ontology/> SELECT ?mp ?drug WHERE { ?drug a dbpedia-owl:Drug . ?drug dbpprop:meltingPoint ?mp  } ', 2, '[dbpedia-owl, dbpprop]', 2, 0, 0, 0, 0, 2, 14781, 14843, 14781, 14781, 14781, 14781, 14781, 5, 2, 14781, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Museums_in_Romania } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 21797, 21828, 21797, 21797, 21797, 21797, 21797, 5, 0, 21797, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Museums_in_France }  ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 36438, 36438, 36438, 36438, 36438, 36438, 36438, 5, 0, 36438, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Parks_in_the_United_Kingdom } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 10844, 10844, 10844, 10844, 10844, 10844, 10844, 5, 0, 10844, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Restaurants_in_the_United_Kingdom }', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 20625, 20641, 20625, 20625, 20625, 20625, 20625, 5, 1, 20625, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Hotels_in_Germany } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, 10172, 10187, 10187, 10172, 10172, 10172, 10172, 5, 0, 10187, SuccessfulQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Zoos_in_Germany }', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, -1, 158906, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery
+'PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  PREFIX dbpedia-cat: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?subject WHERE { ?subject skos:subject dbpedia-cat:Monuments_and_memorials_in_France } ', 2, '[skos, dbpedia-cat]', 1, 0, 0, 0, 0, 1, -1, 366359, -1, -1, -1, -1, -1, -1, -1, -1, FailedQuery

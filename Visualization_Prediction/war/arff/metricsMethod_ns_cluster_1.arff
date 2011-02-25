@@ -1,0 +1,41 @@
+@relation 'atomicMetrics_V1-weka.filters.unsupervised.attribute.StringToWordVector-R5-Pns_-W1000-prune-rate-1.0-N0-L-stemmerweka.core.stemmers.NullStemmer-M1-tokenizerweka.core.tokenizers.WordTokenizer -delimiters \"[,] \"'
+
+@attribute QueryTimestamp date 'yyyy-MM-dd HH:mm:ss'
+@attribute QueryContent string
+@attribute QueryNamespaceNb numeric
+@attribute QueryNamespaceKeys string
+@attribute QueryVariablesNb numeric
+@attribute QueryDataSetSourcesNb numeric
+@attribute QueryResultOrderingNb numeric
+@attribute QueryResultLimitNb numeric
+@attribute QueryResultOffsetNb numeric
+@attribute QuerySizeInTriples numeric
+@attribute WorkflowDurationFromPlatform numeric
+@attribute QueryTotalResponseTimeFromClient numeric
+@attribute QueryCompletionStatus {SuccessfulQuery,FailedQuery}
+@attribute DeciderTotalExecutionTime numeric
+@attribute TransformerTotalExecutionTime numeric
+@attribute IdentifierTotalExecutionTime numeric
+@attribute SelecterTotalExecutionTime numeric
+@attribute ReasonerTotalExecutionTime numeric
+@attribute WorkflowPluginNb numeric
+@attribute DeciderThreadsStartedNB numeric
+@attribute WorkflowDuration numeric
+@attribute ns_http://dbpedia.org/ numeric
+@attribute ns_http://dbpedia.org/class/yago/ numeric
+@attribute ns_http://dbpedia.org/property/ numeric
+@attribute ns_http://dbpedia.org/resource/ numeric
+@attribute ns_http://dbpedia.org/resource/category: numeric
+@attribute ns_http://purl.org/dc/elements/1.1/ numeric
+@attribute ns_http://www.w3.org/1999/02/22-rdf-syntax-ns# numeric
+@attribute ns_http://www.w3.org/2000/01/rdf-schema# numeric
+@attribute ns_http://www.w3.org/2004/02/skos/core# numeric
+@attribute ns_http://www.w3.org/people/berners-lee/card# numeric
+@attribute ns_http://xmlns.com/foaf/0.1/ numeric
+
+@data
+{0 '2011-01-18 15:03:55',1 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>         PREFIX type: <http://dbpedia.org/class/yago/> PREFIX prop: <http://dbpedia.org/property/> SELECT ?country_name ?population WHERE {     ?country a type:LandlockedCountries ;              rdfs:label ?country_name ;              prop:populationEstimate ?population .     FILTER (?population > 15000000) . } ',2 3,3 '[rdfs, prop, type]',4 3,9 3,10 -1,11 769110,12 FailedQuery,13 -1,14 -1,15 -1,16 -1,17 -1,18 -1,19 -1,20 -1,22 1,23 1,28 1}
+{0 '2011-01-19 12:19:37',1 'PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX : <http://dbpedia.org/resource/> PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX dbpedia: <http://dbpedia.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT * WHERE { ?subject rdf:type <http://dbpedia.org/class/yago/CapitalsInEurope>. ?subject rdfs:label ?label. ?subject rdfs:comment ?abstract. FILTER (lang(?label) = \"en\" && lang(?abstract) = \"en\") } LIMIT 20 ',2 3,3 '[rdfs, dbpedia, rdf]',4 3,7 20,9 3,10 -1,11 2629469,12 FailedQuery,13 -1,14 -1,15 -1,16 -1,17 -1,18 -1,19 -1,20 -1,21 1,27 1,28 1}
+{0 '2011-01-20 10:25:34',1 'PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX : <http://dbpedia.org/resource/> PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX dbpedia: <http://dbpedia.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT * WHERE { ?subject rdf:type <http://dbpedia.org/class/yago/BirdsOfTheUnitedStates>. ?subject rdfs:label ?label. ?subject rdfs:comment ?abstract. FILTER (lang(?label) = \"en\" && lang(?abstract) = \"en\") } LIMIT 20',2 3,3 '[rdfs, dbpedia, rdf]',4 3,7 20,9 3,10 29454,11 29609,13 29454,14 29454,15 29438,16 29438,17 29438,18 9,19 10,20 29454,21 1,27 1,28 1}
+{0 '2011-01-20 10:30:31',1 'PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX : <http://dbpedia.org/resource/> PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX dbpedia: <http://dbpedia.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#>  SELECT * WHERE { ?subject dbpedia2:wordnet_type <http://www.w3.org/2006/03/wn/wn20/instances/synset-software-noun-1>. ?subject rdfs:label ?label. ?subject rdfs:comment ?abstract. FILTER (lang(?label) = \"en\" && lang(?abstract) = \"en\") } LIMIT 20 ',2 4,3 '[dbpedia2, rdfs, dbpedia, rdf]',4 3,7 20,9 3,10 -1,11 586078,12 FailedQuery,13 -1,14 -1,15 -1,16 -1,17 -1,18 -1,19 -1,20 -1,21 1,23 1,27 1,28 1}
+{0 '2011-01-20 10:41:01',1 'PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX : <http://dbpedia.org/resource/> PREFIX dbpedia2: <http://dbpedia.org/property/> PREFIX dbpedia: <http://dbpedia.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT * WHERE { ?subject dbpedia2:wordnet_type <http://www.w3.org/2006/03/wn/wn20/instances/synset-airline-noun-2>. ?subject rdfs:label ?label. ?subject rdfs:comment ?abstract. FILTER (lang(?label) = \"en\" && lang(?abstract) = \"en\") } LIMIT 20',2 4,3 '[dbpedia2, rdfs, dbpedia, rdf]',4 3,7 20,9 3,10 -1,11 702391,12 FailedQuery,13 -1,14 -1,15 -1,16 -1,17 -1,18 -1,19 -1,20 -1,21 1,23 1,27 1,28 1}
